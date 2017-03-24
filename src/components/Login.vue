@@ -17,7 +17,6 @@
 </template>
 
 <script>
-/* eslint-disable */
 
   import Firebase from 'firebase'
   import firebase from '../firebase'
@@ -28,13 +27,13 @@
     name: 'login',
 
     methods: {
-      facebookLogin() {
+      facebookLogin () {
         let provider = new Firebase.auth.FacebookAuthProvider()
 
         auth.signInWithPopup(provider)
       },
 
-      googleLogin() {
+      googleLogin () {
         let provider = new Firebase.auth.GoogleAuthProvider()
 
         auth.signInWithPopup(provider)
@@ -43,7 +42,7 @@
     },
 
     beforeCreate () {
-      auth.onAuthStateChanged(function(user) {
+      auth.onAuthStateChanged(function (user) {
         if (user) this.$router.replace('/')
       }.bind(this))
     }

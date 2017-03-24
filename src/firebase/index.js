@@ -3,7 +3,6 @@ import VueFire from 'vuefire'
 import Firebase from 'firebase'
 
 Vue.use(VueFire)
-/* eslint-disable */
 
 // Your firebase configuration go here:
 var config = {

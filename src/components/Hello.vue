@@ -24,16 +24,13 @@
 </template>
 
 <script>
-/* eslint-disable */
-
 import firebase from '../firebase'
 var auth = firebase.auth()
-// var db = firebase.database()
 
 export default {
 
   name: 'hello',
-  
+
   data () {
     return {
       msg: 'Welcome to your vuefire template'
@@ -41,13 +38,13 @@ export default {
   },
 
   methods: {
-    logout() {
+    logout () {
       auth.signOut()
     }
   },
 
   beforeCreate () {
-    auth.onAuthStateChanged(function(user) {
+    auth.onAuthStateChanged(function (user) {
       if (!user) this.$router.replace('/login')
     }.bind(this))
   }
